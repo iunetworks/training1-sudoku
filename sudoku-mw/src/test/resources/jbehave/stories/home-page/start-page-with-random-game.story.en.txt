@@ -1,0 +1,21 @@
+Start page
+
+Narrative:
+
+As a visitor
+In order to enjoy the website
+I want to see a new game every time I visit the web page
+
+
+Scenario: The page should bring a random game for play
+
+Given user is on start page (/)
+Then a sudoku game board should be available
+And  after refresh the game must differ from previous
+
+
+Scenario: There must be high level of randomness
+
+Given user is on start page (/)
+Then a sudoku game board should be available
+And after each 100 refreshes should produce a unique game

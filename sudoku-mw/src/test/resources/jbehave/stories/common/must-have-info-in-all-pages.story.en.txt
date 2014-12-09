@@ -1,0 +1,19 @@
+This story verifies that every page contains information about sponsors.
+@page index
+
+Narrative:
+
+As a user
+I want to see sponsor information on every page
+So that we give the credits to sponsors
+
+Scenario: iunetworks.am is mentor of this project
+
+Given user is on start page (/)
+Then text "This training project is mentored by IUNetworks" must be visible.
+
+Scenario: ucom.am is provides free hosting for project
+
+Given user is on start page (/)
+Then text "IUNetworks" must be visible.
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	>
+
+    <bean id="locale" class="java.util.Locale">
+        <constructor-arg value="en"/>
+    </bean>
+
+    <bean id="keywords" class="org.jbehave.core.i18n.LocalizedKeywords">
+        <constructor-arg ref="locale"/>
+    </bean>
+
+
+</beans>

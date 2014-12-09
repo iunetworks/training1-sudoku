@@ -1,0 +1,12 @@
+ .sudoku-cell {
+    margin: 0px;
+    padding: 5px;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+}
+
+.sudoku-table table {
+    /* 9*[sudoku-cell-with]+13 */
+    width: 373px;
+}

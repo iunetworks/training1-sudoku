@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sudoku-root</artifactId>
+        <groupId>am.iunetworks.traing.sudoku</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>war</packaging>
+
+    <artifactId>sudoku-mw</artifactId>
+
+    <properties>
+        <jetty-maven-plugin.version>9.2.2.v20140723</jetty-maven-plugin.version>
+        <spring.version>4.0.1.RELEASE</spring.version>
+
+        <jbehave.core.version>3.9.5</jbehave.core.version>
+        <jbehave.site.version>3.2</jbehave.site.version>
+        <jackson-jaxrs-json-provider.version>2.2.1</jackson-jaxrs-json-provider.version>
+        <slf4j-api.version>1.6.4</slf4j-api.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>am.iunetworks.traing.sudoku</groupId>
+            <artifactId>sudoku-dao</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>${jackson-jaxrs-json-provider.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jbehave.site</groupId>
+            <artifactId>jbehave-site-resources</artifactId>
+            <version>${jbehave.site.version}</version>
+            <type>zip</type>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-core</artifactId>
+            <version>${jbehave.core.version}</version>
+            <type>zip</type>
+            <classifier>resources</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-spring</artifactId>
+            <version>${jbehave.core.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-odf</artifactId>
+            <version>${jbehave.core.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-maven-plugin</artifactId>
+            <version>${jbehave.core.version}</version>
+            <type>maven-plugin</type>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.44.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.detro.ghostdriver</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.1.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <debug>${maven-compiler-plugin.debug}</debug>
+                    <source>${maven-compiler-plugin.source}</source>
+                    <target>${maven-compiler-plugin.target}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty-maven-plugin.version}</version>
+
+                <configuration>
+                    <skip>${skip.jetty}</skip>
+                    <scanIntervalSeconds>0</scanIntervalSeconds>
+                    <stopPort>8079</stopPort>
+                    <stopKey>stop</stopKey>
+                    <stopWait>100</stopWait>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>start-jetty</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>run-forked</goal>
+                        </goals>
+                        <configuration>
+                            <waitForChild>false</waitForChild>
+                            <maxStartupLines>100</maxStartupLines>
+                            <jvmArgs>${jacocoJVMArgsIT}</jvmArgs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>stop-jetty</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- a little sleep helps jacoco finilize jetty coverage report file -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <configuration>
+                    <tasks>
+                        <sleep seconds="2" />
+                    </tasks>
+                    <skip>${skip.jacoco}</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>wait-jetty-jvm-to-shutdown</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <configuration>
+                    <skip>${skip.jacoco}</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>prepare-jacoco-ut</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                        <configuration>
+                            <append>false</append>
+                            <destFile>${project.build.directory}/jacoco-ut.exec</destFile>
+                            <propertyName>jacocoJVMArgsUT</propertyName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>prepare-jacoco-it</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                        <configuration>
+                            <append>false</append>
+                            <destFile>${project.build.directory}/jacoco-it.exec</destFile>
+                            <propertyName>jacocoJVMArgsIT</propertyName>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>merge-execution-files</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>merge</goal>
+                        </goals>
+                        <configuration>
+                            <fileSets>
+                                <fileSet>
+                                    <directory>${project.build.directory}</directory>
+                                    <includes>
+                                        <include>*.exec</include>
+                                    </includes>
+                                </fileSet>
+                            </fileSets>
+                            <destFile>${project.build.directory}/jacoco-merged.exec</destFile>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>generate-usage-report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <dataFile>${project.build.directory}/jacoco-merged.exec</dataFile>
+                            <includes>
+                                <include>am/iunetworks/**/*</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>check-coverage</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <dataFile>${project.build.directory}/jacoco-merged.exec</dataFile>
+                            <rules>
+                                <rule implementation="org.jacoco.maven.RuleConfiguration">
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>INSTRUCTION</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>1</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/ITest*</exclude>
+                    </excludes>
+                    <argLine>${jacocoJVMArgsUT}</argLine>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <includes>
+                        <include>**/ITest*</include>
+                    </includes>
+                    <argLine>${jacocoJVMArgsIT} -DdryRun=${jbehave.dry.run}</argLine>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jbehave</groupId>
+                <artifactId>jbehave-maven-plugin</artifactId>
+                <version>${jbehave.core.version}</version>
+                <configuration>
+                    <skip>${skip.jbehave}</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>unpack-view-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>unpack-view-resources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+        </plugins>
+
+
+    </build>
+
+</project>
