@@ -24,7 +24,7 @@ public class IndexController {
     public ModelAndView index(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
         return new ModelAndView("index");
     }
-
+/**
     @RequestMapping("new.json")
     public void loadARandomGame(HttpServletResponse response) {
         String randomGame = gameDao.getRandomGame();
@@ -37,4 +37,5 @@ public class IndexController {
             logger.trace("Error sending game", e);
         }
     }
+*/
 }
