@@ -122,6 +122,7 @@ Before each push (also can be before each commit) developer must verify 100% cov
  
     mvn -P run-all verify
     
+The coverage reports can be found in `target/site/jacoco` directory of each module.
 
 ###### 2. Always take the shortest way to implement requirement.
 
