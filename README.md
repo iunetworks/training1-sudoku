@@ -1,5 +1,8 @@
-# Open Sudoku
-Open source demo project to showcase BDD. 
+# Open Sudoku 
+ 
+[![Build Status](https://travis-ci.org/iunetworks/training1-sudoku.svg)](https://travis-ci.org/iunetworks/training1-sudoku)  
+
+Open source demo project to showcase BDD.
 
 ## Setting up the workspace
 
