@@ -6,3 +6,6 @@ pom.xml.next
 release.properties
 .idea/
 **/*.iml
+.project
+.settings/
+.classpath
