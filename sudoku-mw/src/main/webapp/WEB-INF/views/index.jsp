@@ -37,6 +37,86 @@
             </ul>
         </nav>
         <h3 class="text-muted">Open Sudoku</h3>
+		
+		
+		<script type="text/javascript">
+var c=0;
+var t;
+var timer_is_on=0;
+
+function timedCount()
+{
+document.getElementById('txt').value=c;
+c=c+1;
+t=setTimeout("timedCount()",1000);
+}
+
+function doTimer()
+{
+if (!timer_is_on)
+  {
+  timer_is_on=1;
+  timedCount();
+  }
+}
+
+
+
+ 
+
+
+function simple_timer(sec, block, direction) {
+    var time    = sec;
+    direction   = direction || false;
+             
+    var hour    = parseInt(time / 3600);
+    if ( hour < 1 ) hour = 0;
+    time = parseInt(time - hour * 3600);
+    if ( hour < 10 ) hour = '0'+hour;
+ 
+    var minutes = parseInt(time / 60);
+    if ( minutes < 1 ) minutes = 0;
+    time = parseInt(time - minutes * 60);
+    if ( minutes < 10 ) minutes = '0'+minutes;
+ 
+    var seconds = time;
+    if ( seconds < 10 ) seconds = '0'+seconds;
+ 
+    block.innerHTML = hour+':'+minutes+':'+seconds;
+ 
+    if ( direction ) {
+        sec++;
+ 
+        setTimeout(function(){ simple_timer(sec, block, direction); }, 1000);
+    } else {
+        sec--;
+ 
+        if ( sec > 0 ) {
+            setTimeout(function(){ simple_timer(sec, block, direction); }, 1000);
+        } else {
+            alert('Время вышло!');
+        }
+    }
+}
+</script>
+
+<form>
+
+<script type="text/javascript">
+function start_timer() {
+    var block = document.getElementById('sample_timer');
+    simple_timer(0, block, true);
+}
+ </script
+<div id="sample_timer">00:00:00</div>
+<input type="button" value="Начать отсчёт" onclick="start_timer()" />
+<input type="button" value="Начать отсчет!" onClick="doTimer()">
+<input type="text" id="txt">
+</form>
+ 
+<div id="sample_timer">00:00:00</div>
+<input type="button" value="Начать отсчёт" onclick="start_timer()">
+
     </div>
 
     <div class="row">
