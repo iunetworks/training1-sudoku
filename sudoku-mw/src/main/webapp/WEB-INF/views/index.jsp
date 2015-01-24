@@ -17,6 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="${requestScope.pageContext}/static/css/jumbotron-narrow.css" rel="stylesheet">
     <link href="${requestScope.pageContext}/static/css/sudoku.css" rel="stylesheet">
+	  <link href="${requestScope.pageContext}/static/css/sudoku2.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -29,38 +30,68 @@
 
 <div class="container">
     <div class="header">
+	
         <nav>
-            <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="#">Play</a></li>
+            <ul class="nav nav-pills pull-right"> 
+                <li role="presentation" class="active"><a href="#" type="button" value="play" onclick="start_timer()">Play</a></li>
                 <li role="presentation"><a href="/submit.html">Submit a Game</a></li>
                 <li role="presentation"><a href="/about.html">About project</a></li>
+				
             </ul>
         </nav>
-        <h3 class="text-muted">Open Sudoku</h3>
+        <div class ="block"><h3 class="text-muted">Open Sudoku  </h3></div>
+		
+	
+    </div>
+
+    <div class="row">
+        <div id="sudoku-table" class="sudoku-table col-lg-12">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
 		
 		
+		<nav>
+            <ul class="nav nav-pills pull-right"> 
+                <li role="presentation" class="active"><a href="#" ><div class ="block" id="sample_timer">00:00:00</div> </a></li>
+                <li role="presentation"><a href="/submit.html"><div>             Game level: easy (medium, hard, genius)	        </div></a></li>
+                <li role="presentation"><a href="/about.html"><div>  Moves: 1</div></a></li>
+				
+            </ul>
+        </nav>
+            &nbsp;    
+		
+			
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="row">
+            <div class="col-lg-6">
+                <p>This training project is mentored by <a href="http://iunetworks.am">iunetworks.am</a></p>
+            </div>
+            <div class="col-lg-6">
+                <p>Free hosting provided by <a href="http://www.ucom.am">ucom.am</a></p>
+            </div>
+        </div>
+
+
+    </footer>
+
+</div>
+<!-- /container -->
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="${requestScope.pageContext}/static/js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="${requestScope.pageContext}/static/js/sudoku-game.js"></script>
+
+	
 		<script type="text/javascript">
-var c=0;
-var t;
-var timer_is_on=0;
-
-function timedCount()
-{
-document.getElementById('txt').value=c;
-c=c+1;
-t=setTimeout("timedCount()",1000);
-}
-
-function doTimer()
-{
-if (!timer_is_on)
-  {
-  timer_is_on=1;
-  timedCount();
-  }
-}
-
-
 
  
 
@@ -108,49 +139,12 @@ function start_timer() {
     simple_timer(0, block, true);
 }
  </script
-<div id="sample_timer">00:00:00</div>
-<input type="button" value="Начать отсчёт" onclick="start_timer()" />
-<input type="button" value="Начать отсчет!" onClick="doTimer()">
-<input type="text" id="txt">
+ 
+
 </form>
  
-<div id="sample_timer">00:00:00</div>
-<input type="button" value="Начать отсчёт" onclick="start_timer()">
 
-    </div>
+<!-- / <input type="button" value="play" onclick="start_timer()">*/ -->
 
-    <div class="row">
-        <div id="sudoku-table" class="sudoku-table col-lg-12">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12">
-            &nbsp;
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="row">
-            <div class="col-lg-6">
-                <p>This training project is mentored by <a href="http://iunetworks.am">iunetworks.am</a></p>
-            </div>
-            <div class="col-lg-6">
-                <p>Free hosting provided by <a href="http://www.ucom.am">ucom.am</a></p>
-            </div>
-        </div>
-
-
-    </footer>
-
-</div>
-<!-- /container -->
-
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="${requestScope.pageContext}/static/js/ie10-viewport-bug-workaround.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="${requestScope.pageContext}/static/js/sudoku-game.js"></script>
 </body>
 </html>
