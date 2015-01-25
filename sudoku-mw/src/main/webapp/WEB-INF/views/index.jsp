@@ -17,7 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="${requestScope.pageContext}/static/css/jumbotron-narrow.css" rel="stylesheet">
     <link href="${requestScope.pageContext}/static/css/sudoku.css" rel="stylesheet">
-	  <link href="${requestScope.pageContext}/static/css/sudoku2.css" rel="stylesheet">
+	  <link href="${requestScope.pageContext}/static/css/sudoku2.css" rel="stylesheet"> 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -53,16 +53,31 @@
         <div class="col-lg-12">
 		
 		
+
+       <div class ="block" id="sample_timer">00:00:00</div>
+        <div class ="block3"><li role="presentation">
+            <div class="block1" border="1px solid #ccc" ><ul  class="nav nav-pills pull-right">
+                    
+                    <li role="presentation"><a href="#">easy </a></li> 
+                    <li role="presentation"><a href="#">medium</a></li> 
+                    <li role="presentation"><a href="#">hard </a></li>
+                    <li role="presentation"><a href="#">genius</a></li>    
+                           </ul></div>
+               <a href="/about.html">   Moves: 1 </a>   </li>
+        </div>
+
+
+
+<!--
 		<nav>
             <ul class="nav nav-pills pull-right"> 
                 <li role="presentation" class="active"><a href="#" ><div class ="block" id="sample_timer">00:00:00</div> </a></li>
-                <li role="presentation"><a href="/submit.html"><div>             Game level: easy (medium, hard, genius)	        </div></a></li>
+                
                 <li role="presentation"><a href="/about.html"><div>  Moves: 1</div></a></li>
 				
             </ul>
         </nav>
-            &nbsp;    
-		
+            -->
 			
         </div>
     </div>
