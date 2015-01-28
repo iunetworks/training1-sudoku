@@ -44,6 +44,20 @@
         </div>
     </div>
 
+    <!-- adding status bar to bottom of gameboard -->
+    <div style="margin-top:20px;">
+    <table align=center width=373px>
+    <tr>
+    <td width=18% align=right>Game level:</td>
+    <td width=10%>easy</td>
+    <td width=10% align=right>Moves:</td>
+    <td width=5%>1</td>
+    <td width=20% align=right>Elapsed time:</td>
+    <td width=10%>3m 2s</td>
+    </tr>
+    </table>
+    </div>
+
     <div class="row">
         <div class="col-lg-12">
             &nbsp;
