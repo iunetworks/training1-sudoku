@@ -50,15 +50,8 @@
 			<div id="status_bar" class="status_bar col-md-4"></div>
 
 		</div>
+		&nbsp;
 		<div class="row">
-			<div class="col-md-4">
-				Game level <select name="games">
-					<option value="easy">easy</option>
-					<option value="medium">medium</option>
-					<option value="hard">hard</option>
-					<option value="genius">genius</option>
-				</select>
-			</div>
 			<div class="col-md-4">
 				<p>Moves 0</p>
 			</div>
