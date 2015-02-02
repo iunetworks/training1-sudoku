@@ -1,12 +1,29 @@
- .sudoku-cell {
-    margin: 0px;
-    padding: 5px;
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
+.sudoku-cell {
+	margin: 0px;
+	padding: 5px;
+	border: 1px solid black;
+	width: 40px;
+	height: 40px;
 }
 
 .sudoku-table table {
-    /* 9*[sudoku-cell-with]+13 */
-    width: 373px;
+	/* 9*[sudoku-cell-with]+13 */
+	width: 367px;
+	border: 3px solid black;
+}
+
+td:nth-child(3) {
+	border-right-width: 3px;
+}
+
+td:nth-child(6) {
+	border-right-width: 3px;
+}
+
+tr:nth-child(3) td {
+	border-bottom-width: 3px;
+}
+
+tr:nth-child(6) td {
+	border-bottom-width: 3px;
 }
