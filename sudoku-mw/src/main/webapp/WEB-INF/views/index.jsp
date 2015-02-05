@@ -31,7 +31,7 @@
     <div class="header">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="#">Play</a></li>
+             <li role="presentation" class="active"><a href="#" type="button" value="play" onclick="start_timer()">Play</a></li>
                 <li role="presentation"><a href="/submit.html">Submit a Game</a></li>
                 <li role="presentation"><a href="/about.html">About project</a></li>
             </ul>
@@ -41,6 +41,46 @@
 
     <div class="row">
         <div id="sudoku-table" class="sudoku-table col-lg-12">
+        </div>
+    </div>
+
+
+
+<div class="row">
+        <div class="col-lg-12">
+        
+        
+
+       <div class ="span4" id="sample_timer">00:00:00</div>
+
+        <div class ="span4">
+             <div class ="span8"> <a href="#">   Moves: 1 </a> </div>  
+
+
+         
+               <div class ="span8"> <ul  class="nav nav-pills pull-right activ">
+                   
+                    <li role="presentation"><a href="#">easy </a></li> 
+                    <li role="presentation"><a href="#">medium</a></li> 
+                    <li role="presentation"><a href="#">hard </a></li>
+                    <li role="presentation"><a href="#">genius</a></li>    
+                </ul>
+               </div>
+        </div>
+
+
+
+<!--
+        <nav>
+            <ul class="nav nav-pills pull-right"> 
+                <li role="presentation" class="active"><a href="#" ><div class ="block" id="sample_timer">00:00:00</div> </a></li>
+                
+                <li role="presentation"><a href="/about.html"><div>  Moves: 1</div></a></li>
+                
+            </ul>
+        </nav>
+            -->
+            
         </div>
     </div>
 
@@ -72,5 +112,14 @@
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="${requestScope.pageContext}/static/js/sudoku-game.js"></script>
+<script src="${requestScope.pageContext}/static/js/bord.js"></script> 
+
+<form>
+
+<script src="${requestScope.pageContext}/static/js/timer.js"></script>
+
+</form>
+ 
+
 </body>
 </html>
