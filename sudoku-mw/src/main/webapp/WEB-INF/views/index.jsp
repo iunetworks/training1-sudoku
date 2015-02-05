@@ -35,7 +35,7 @@
         <div  class="btn-group  span8" >    <ul class="nav nav-pills pull-right">
              <li role="presentation" class="active"><a href="#" type="button" value="play" onclick="start_timer()">Play</a></li>
                 <li role="presentation"><a href="/submit.html">Submit a Game</a></li>
-                <li role="presentation"><a href="/about.html">About project</a></li>
+                <li role="presentation"><a href=" arthap-training1-sudoku\sudoku-mw\src\main\webapp\WEB-INF\views\about.jsp">About project</a></li>
             </ul>
         </div>
  <div  class="btn-group ">   <button  class="btn btn-primary " value="" onclick="start_game()">NEW GAME</button></div>
