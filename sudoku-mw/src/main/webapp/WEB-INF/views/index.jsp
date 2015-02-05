@@ -40,8 +40,8 @@
     </div>
 
     <div class="row">
-        <div id="sudoku-table" class="sudoku-table col-lg-12">
-        </div>
+        <div id="sudoku-table" class="sudoku-table col-lg-10 span8">        </div>
+        <div  class="btn-group span4 ">   <button  class="btn btn-success" value="" onclick="start_game()">HINT</button></div>
     </div>
 
 
