@@ -29,14 +29,18 @@
 
 <div class="container">
     <div class="header">
+         <div  class="btn-group  span8"  > <h3 class="text-muted">Open Sudoku</h3> </div>
         <nav>
-            <ul class="nav nav-pills pull-right">
+             
+        <div  class="btn-group  span8" >    <ul class="nav nav-pills pull-right">
              <li role="presentation" class="active"><a href="#" type="button" value="play" onclick="start_timer()">Play</a></li>
                 <li role="presentation"><a href="/submit.html">Submit a Game</a></li>
                 <li role="presentation"><a href="/about.html">About project</a></li>
             </ul>
-        </nav>
-        <h3 class="text-muted">Open Sudoku</h3>
+        </div>
+ <div  class="btn-group ">   <button  class="btn btn-primary " value="" onclick="start_game()">NEW GAME</button></div>
+       </nav>
+         
     </div>
 
     <div class="row">
