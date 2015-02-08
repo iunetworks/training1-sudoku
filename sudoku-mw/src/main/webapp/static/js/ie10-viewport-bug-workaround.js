@@ -7,6 +7,15 @@
 
 // See the Getting Started docs for more information:
 // http://getbootstrap.com/getting-started/#support-ie10-width
+$(document).ready(function() {
+	$("#hide").click(function() {
+		$("#new_game").hide();
+		});
+	$(window).load(function() {
+		$('#new_game').show();
+		$('#new_game').css("visibility", "visible");
+		});
+});
 
 (function () {
     'use strict';

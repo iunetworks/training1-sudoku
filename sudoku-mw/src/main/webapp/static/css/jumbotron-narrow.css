@@ -58,7 +58,32 @@ body {
 .marketing p + h4 {
     margin-top: 28px;
 }
-
+#new_game{
+	visibility: hidden;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 30em;
+	height: 18em;
+	margin-top: -9em;
+	margin-left: -15em;
+	border: 1px solid black;
+	background-color: #f3f3f3;
+	z-index: 1;
+}
+#div_title {
+	text-align: center;
+}
+#game_level {
+	position: absolute;
+	top: 100px;
+}
+#btn_start {
+	position: absolute;
+	top: 220px;
+	left: 70%;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
