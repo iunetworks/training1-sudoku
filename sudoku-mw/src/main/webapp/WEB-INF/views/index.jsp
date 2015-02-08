@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" type="image/x-icon" href="${requestScope.pageContext}/static/images/favicon.ico">
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <title>Play Sudoku</title>
 
     <!-- Bootstrap core CSS -->
@@ -25,7 +26,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body onload="show()">
 
 <div class="container">
     <div class="header">
@@ -38,7 +39,22 @@
         </nav>
         <h3 class="text-muted">Open Sudoku</h3>
     </div>
-
+    <div id="new_game">
+    <div id="div_title">
+    <h3>Start new game</h3>
+    </div>
+    <div id="game_level">
+    Game level <select name="games">
+    <option value="easy">easy</option>
+    <option value="medium">medium</option>
+    <option value="hard">hard</option>
+    <option value="genius">genius</option>
+    </select>
+    </div>
+    <div id="btn_start">
+    <button id="hide" >Start</button>
+    </div>
+    </div>
     <div class="row">
         <div id="sudoku-table" class="sudoku-table col-lg-12">
         </div>
