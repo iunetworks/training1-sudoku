@@ -7,7 +7,11 @@
 
 // See the Getting Started docs for more information:
 // http://getbootstrap.com/getting-started/#support-ie10-width
+$("#show").click(function() {
+			$("#new_game").show();
+			$('#new_game').css("visibility", "visible");
 
+		});
 (function () {
     'use strict';
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
