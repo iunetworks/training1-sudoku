@@ -41,10 +41,8 @@
 
     <div class="row">
         <div id="sudoku-table" class="sudoku-table col-lg-12">
-        <div id="status_bar" class="status_bar col-md-4"></div>
         </div>
     </div>
-    &nbsp;
     <div class="row">
      <div class="col-md-4">
       <p>Moves 0</p>
