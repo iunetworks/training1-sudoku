@@ -58,18 +58,6 @@ body {
 .marketing p + h4 {
     margin-top: 28px;
 }
-
-#left_panel{
-	position: absolute;
-	top:110px;
-	width:148px;
-	height:367px;
-}
-#sudoku-table{
-	left:165px;
-	width:400px;
-}
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */

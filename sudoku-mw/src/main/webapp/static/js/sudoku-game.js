@@ -28,3 +28,8 @@
     }
 
 })(jQuery);
+$("#show").click(function() {
+	$("#new_game").show();
+	$('#new_game').css("visibility", "visible");
+
+});
