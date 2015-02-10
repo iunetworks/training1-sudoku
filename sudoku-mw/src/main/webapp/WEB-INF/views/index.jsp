@@ -43,6 +43,14 @@
         <div id="sudoku-table" class="sudoku-table col-lg-12">
         </div>
     </div>
+    <div class="row">
+     <div class="col-md-4">
+      <p>Moves 0</p>
+     </div>
+    <div class="col-md-4">
+     <p id="timer">Time 00:00:00</p>
+    </div>
+    </div>
 
     <div class="row">
         <div class="col-lg-12">
