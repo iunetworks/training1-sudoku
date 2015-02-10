@@ -38,7 +38,10 @@
         </nav>
         <h3 class="text-muted">Open Sudoku</h3>
     </div>
-
+    <div id="left_panel">
+     <br><br>
+     <button>HINT</button>
+    </div>
     <div class="row">
         <div id="sudoku-table" class="sudoku-table col-lg-12">
         </div>
