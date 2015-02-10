@@ -43,7 +43,7 @@
         <div id="sudoku-table" class="sudoku-table col-lg-12">
         </div>
     </div>
-    <div class="row">
+    <div class="row game-status">
      <div class="col-md-4">
       <p>Moves 0</p>
      </div>
