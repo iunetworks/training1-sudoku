@@ -31,3 +31,15 @@ tr:nth-child(6) td {
 .game-status{
 	margin-top: 15px;
 }
+
+#left_panel{
+    position: absolute;
+    top:110px;
+    width:148px;
+    height:367px;
+}
+
+#sudoku-table{
+    left:165px;
+    width:400px;
+}
