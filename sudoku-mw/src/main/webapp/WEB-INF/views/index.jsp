@@ -38,6 +38,22 @@
         </nav>
         <h3 class="text-muted">Open Sudoku</h3>
     </div>
+<div id="new_game">
+ <div id="div_title">
+  <h3>Start new game</h3>
+ </div>
+   <div id="game_level">
+    Game level <select name="games">
+    <option value="easy">easy</option>
+    <option value="medium">medium</option>
+    <option value="hard">hard</option>
+    <option value="genius">genius</option>
+    </select>
+   </div>
+ <div id="btn_start">
+  <button id="hide" >Start</button>
+ </div>
+</div>
     <div id="left_panel">
      <br><br>
      <button>HINT</button>

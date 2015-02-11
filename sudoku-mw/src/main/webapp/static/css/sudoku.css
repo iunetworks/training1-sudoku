@@ -43,3 +43,30 @@ tr:nth-child(6) td {
     left:165px;
     width:400px;
 }
+
+#new_game{
+    visibility: visible;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30em;
+    height: 18em;
+    margin-top: -9em;
+    margin-left: -15em;
+    border: 1px solid black;
+    background-color: #f3f3f3;
+    z-index: 1;
+}
+#div_title {
+    text-align: center;
+}
+#game_level {
+    position: absolute;
+    top: 100px;
+}
+#btn_start {
+    position: absolute;
+    top: 220px;
+    left: 70%;
+}
