@@ -28,7 +28,3 @@
     }
 
 })(jQuery);
-
-$("#hide").click(function() {
-	$("#new_game").hide();
-});
