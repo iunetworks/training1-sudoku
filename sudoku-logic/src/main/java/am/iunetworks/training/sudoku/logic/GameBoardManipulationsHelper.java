@@ -15,6 +15,8 @@ public class GameBoardManipulationsHelper {
     public GameBoardManipulationsHelper(String board) {
         checkIsBoardValid(board);
         this.board = board.toCharArray();
+       
+    }
     }
 
     private void checkIsBoardValid(String board) {
@@ -31,21 +33,41 @@ public class GameBoardManipulationsHelper {
     }
 
 
+		
+		//rotate metod
+		public void RotateRight() {
+			 
+			 
+			
+			 
+			int length=9;
+				
+			
+			char [][] temp =new char[length][length];
+			int index= 0;
 
+	        for (int i = 0; i < length;i++ ){
+	            for(int j = 0; j < length; j++) {
+	                temp[i][j] = board[index];
+	                index++;
 
+	            }
+	        }
+	        int index2=0;
+	        for (int i = 0; i < length;i++ ){
+	            for(int j = 0; j < length; j++) {
+	               board[index2] = temp[length-j-1][i];
+                   index2++;
+	           
+	        }
 
-
-    public void CheckRotate( int index,int length) {
-
-
-
-
-
-
-
-
+			}
+	        
+		}	
+	 
 
 }
+
 
 
 
