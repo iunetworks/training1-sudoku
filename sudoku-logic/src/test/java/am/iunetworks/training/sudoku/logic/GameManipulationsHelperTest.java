@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class GameManipulationsHelperTest {
 
-    @Test
+    @http://www.list.am/item/1965943Test
     public void testHelperBasicValidations() {
         try {
             new GameBoardManipulationsHelper(null);
@@ -45,4 +45,38 @@ public class GameManipulationsHelperTest {
         Arrays.fill(board,'0');
         return new String(board);
     }
+
+
+    @Test
+    public void testRotate () {
+
+
+          char [] board = new char[81];
+          Arrays.fill(board,'*');
+
+
+          String art = new String(board);
+
+          String temp = art.replaceFirst(".{9}", "123456789");
+          Rotate  rot = new Rotate(temp);
+
+          assertEquals("after rotafter "rot.board ,rot.RotateRight());
+          assertEquals("after rotafter "rot.board ,rot.RotateRight());
+          assertEquals("after rotafter "rot.board ,rot.RotateRight());
+          assertEquals("after rotafter "board ,rot.RotateRight());
+
+
+      }
+
+
+
+
+
+    }
+
+
+
+
+
+
 }

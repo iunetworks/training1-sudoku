@@ -30,4 +30,24 @@ public class GameBoardManipulationsHelper {
         }
     }
 
+
+
+
+
+
+    public void CheckRotate( int index,int length) {
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
 }
