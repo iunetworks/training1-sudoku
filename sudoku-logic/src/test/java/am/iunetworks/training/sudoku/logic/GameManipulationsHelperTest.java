@@ -80,9 +80,36 @@ public class GameManipulationsHelperTest {
 
     }
 
+@Test
+public void TestReplaceRow () {
 
+int index2=0;
+	 
+int length=9;
+	
+char [][] matrix =new char[length][length];
+char [][] tem =new char[length][length];
+	
+    for (int i = 0; i < length;i++ ){
+        for(int j = 0; j < length; j++) {
+        
+        	if (j == rot.r ||  j==rot.r2){
+        		 matrix [i][rot.range]=tem[i][rot.range2]; 
+        		 matrix [i][rot.range2]=tem[i][rot.range];
+        	
+        	 }
+        	else    matrix [i][j]=tem[i][j]; 
+        	 
+         board[index2] = matrix[i][j];
+         index2++;
+        }}
+    assertEquals("after rotafter " board ,rot.Row());
+         
+//test1
+   assertNotEquals("after rotafter "rot.board ,rot.Row());
+   
 
-
+}
 
 
 }
