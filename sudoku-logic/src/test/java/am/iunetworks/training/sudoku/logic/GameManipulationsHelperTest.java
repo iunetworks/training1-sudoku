@@ -82,7 +82,14 @@ public class GameManipulationsHelperTest {
 
 @Test
 public void TestReplaceRow () {
-
+	char [] board = new char[81];
+	Arrays.fill(board,'*');
+	
+	
+	String art = new String(board);
+	
+	String temp = art.replaceFirst(".{81}", "123456789123456789123456789123456789123456789123456789123456789123456789123456789");
+	Rotate  rot = new Rotate(temp);
 int index2=0;
 	 
 int length=9;
