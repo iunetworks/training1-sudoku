@@ -37,7 +37,7 @@ public class GameBoardManipulationsHelper {
 
 		
 		//rotate metod
-		public void RotateRight() {
+		public char[] RotateRight() {
 			 
 			 
 			
@@ -55,6 +55,7 @@ public class GameBoardManipulationsHelper {
 
 	            }
 	        }
+	        
 	        int index2=0;
 	        for (int i = 0; i < length;i++ ){
 	            for(int j = 0; j < length; j++) {
@@ -65,12 +66,12 @@ public class GameBoardManipulationsHelper {
 
 			}
 	        
-		}	
+		return board;}	
 	 
 
-}
+ 
 //Row replace manipulation
-public void ReplaceRow(){
+public char[] ReplaceRow(){
 	
 	 
 	int length=9;
@@ -110,6 +111,6 @@ public void ReplaceRow(){
 
 	}
 
-
+return board;
 
 }

@@ -60,16 +60,16 @@ public class GameManipulationsHelperTest {
           String temp = art.replaceFirst(".{9}", "123456789");
           GameBoardManipulationsHelper  rot = new GameBoardManipulationsHelper(temp);
 //rotate1
-          assertEquals("after rotafter "rot.board ,rot.RotateRight());
+          assertEquals("after rotafter ", rot.board ,rot.RotateRight());
           //assertEquals("after rotatet 9-index=1"rot.board[9],1); harca?
 //rotate2         
-          assertEquals("after rotafter "rot.board ,rot.RotateRight());
+          assertEquals("after rotafter ", rot.board ,rot.RotateRight());
           //assertEquals("after rotatet 9-index=1"rot.board[81],1);
 //rotate3        
-          assertEquals("after rotafter "rot.board ,rot.RotateRight());
+          assertEquals("after rotafter ", rot.board ,rot.RotateRight());
           //assertEquals("after rotatet 9-index=1"rot.board[1],9);
 //rotate4        
-          assertEquals("after rotafter "temp ,rot.RotateRight());
+          assertEquals("after rotafter ", temp ,rot.RotateRight());
 
 
       }
