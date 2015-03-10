@@ -11,10 +11,14 @@ package am.iunetworks.training.sudoku.logic;
 public class GameBoardManipulationsHelper {
 
     private char[] board;
+    int range; 
+    int range2;
 
     public GameBoardManipulationsHelper(String board) {
         checkIsBoardValid(board);
         this.board = board.toCharArray();
+       
+    }
     }
 
     private void checkIsBoardValid(String board) {
@@ -29,5 +33,83 @@ public class GameBoardManipulationsHelper {
             throw new IllegalArgumentException("Game board can only have 0-9 chars");
         }
     }
+
+
+		
+		//rotate metod
+		public void RotateRight() {
+			 
+			 
+			
+			 
+			int length=9;
+				
+			
+			char [][] temp =new char[length][length];
+			int index= 0;
+
+	        for (int i = 0; i < length;i++ ){
+	            for(int j = 0; j < length; j++) {
+	                temp[i][j] = board[index];
+	                index++;
+
+	            }
+	        }
+	        int index2=0;
+	        for (int i = 0; i < length;i++ ){
+	            for(int j = 0; j < length; j++) {
+	               board[index2] = temp[length-j-1][i];
+                   index2++;
+	           
+	        }
+
+			}
+	        
+		}	
+	 
+
+}
+//Row replace manipulation
+public void ReplaceRow(){
+	
+	 
+	int length=9;
+		
+	char [][] matrix =new char[length][length];
+	char [][] temp =new char[length][length];
+	int index= 0;
+
+    for (int i = 0; i < length;i++ ){
+        for(int j = 0; j < length; j++) {
+            temp[i][j] = board[index];
+            index++;
+
+        }
+    }
+    
+    int index2=0;
+    int range = (int)(Math.random()*8);
+    this.range=range;
+    
+    int range2 = (int)(Math.random()*8);
+    this.range2 =range2;
+    
+    for (int i = 0; i < length;i++ ){
+        for(int j = 0; j < length; j++) {
+        	if (j == range  ||  j==range2){
+        		 matrix [i][range]=temp[i][range2]; 
+        		 matrix [i][range2]=temp[i][range];
+        	
+        	 }
+        	else{ matrix [i][j]=temp[i][j]; }
+        	 
+         board[index2] = matrix[i][j];
+         index2++;
+       
+    }
+
+	}
+
+
 
 }

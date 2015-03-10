@@ -45,4 +45,71 @@ public class GameManipulationsHelperTest {
         Arrays.fill(board,'0');
         return new String(board);
     }
+
+
+    @Test
+    public void testRotate () {
+
+
+          char [] board = new char[81];
+          Arrays.fill(board,'*');
+
+
+          String art = new String(board);
+
+          String temp = art.replaceFirst(".{9}", "123456789");
+          GameBoardManipulationsHelper  rot = new GameBoardManipulationsHelper(temp);
+//rotate1
+          assertEquals("after rotafter "rot.board ,rot.RotateRight());
+          //assertEquals("after rotatet 9-index=1"rot.board[9],1); harca?
+//rotate2         
+          assertEquals("after rotafter "rot.board ,rot.RotateRight());
+          //assertEquals("after rotatet 9-index=1"rot.board[81],1);
+//rotate3        
+          assertEquals("after rotafter "rot.board ,rot.RotateRight());
+          //assertEquals("after rotatet 9-index=1"rot.board[1],9);
+//rotate4        
+          assertEquals("after rotafter "temp ,rot.RotateRight());
+
+
+      }
+
+
+
+
+
+    }
+
+@Test
+public void TestReplaceRow () {
+
+int index2=0;
+	 
+int length=9;
+	
+char [][] matrix =new char[length][length];
+char [][] tem =new char[length][length];
+	
+    for (int i = 0; i < length;i++ ){
+        for(int j = 0; j < length; j++) {
+        
+        	if (j == rot.r ||  j==rot.r2){
+        		 matrix [i][rot.range]=tem[i][rot.range2]; 
+        		 matrix [i][rot.range2]=tem[i][rot.range];
+        	
+        	 }
+        	else    matrix [i][j]=tem[i][j]; 
+        	 
+         board[index2] = matrix[i][j];
+         index2++;
+        }}
+    assertEquals("after rotafter " board ,rot.Row());
+         
+//test1
+   assertNotEquals("after rotafter "rot.board ,rot.Row());
+   
+
+}
+
+
 }
