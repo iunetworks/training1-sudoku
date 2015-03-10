@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class GameManipulationsHelperTest {
 
-    @http://www.list.am/item/1965943Test
+    @Test
     public void testHelperBasicValidations() {
         try {
             new GameBoardManipulationsHelper(null);
@@ -61,15 +61,15 @@ public class GameManipulationsHelperTest {
           GameBoardManipulationsHelper  rot = new GameBoardManipulationsHelper(temp);
 //rotate1
           assertEquals("after rotafter "rot.board ,rot.RotateRight());
-          assertEquals("after rotatet 9-index=1"rot.board[9],1);
+          //assertEquals("after rotatet 9-index=1"rot.board[9],1); harca?
 //rotate2         
           assertEquals("after rotafter "rot.board ,rot.RotateRight());
-          assertEquals("after rotatet 9-index=1"rot.board[81],1);
+          //assertEquals("after rotatet 9-index=1"rot.board[81],1);
 //rotate3        
           assertEquals("after rotafter "rot.board ,rot.RotateRight());
-          assertEquals("after rotatet 9-index=1"rot.board[1],9);
+          //assertEquals("after rotatet 9-index=1"rot.board[1],9);
 //rotate4        
-          assertFalse("after rotafter "temp ,rot.RotateRight());
+          assertEquals("after rotafter "temp ,rot.RotateRight());
 
 
       }
