@@ -25,6 +25,7 @@
 
     <modules>
         <module>sudoku-dao</module>
+        <module>sudoku-logic</module>
         <module>sudoku-mw</module>
     </modules>
 

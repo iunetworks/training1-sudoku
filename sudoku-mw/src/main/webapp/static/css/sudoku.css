@@ -1,12 +1,71 @@
- .sudoku-cell {
-    margin: 0px;
-    padding: 5px;
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
+.sudoku-cell {
+	margin: 0px;
+	padding: 5px;
+	border: 1px solid black;
+	width: 40px;
+	height: 40px;
 }
 
 .sudoku-table table {
-    /* 9*[sudoku-cell-with]+13 */
-    width: 373px;
+	/* 9*[sudoku-cell-with]+13 */
+	width: 367px;
+	border: 3px solid black;
+}
+
+td:nth-child(3) {
+	border-right-width: 3px;
+}
+
+td:nth-child(6) {
+	border-right-width: 3px;
+}
+
+tr:nth-child(3) td {
+	border-bottom-width: 3px;
+}
+
+tr:nth-child(6) td {
+	border-bottom-width: 3px;
+}
+
+.game-status{
+	margin-top: 15px;
+}
+
+#left_panel{
+    position: absolute;
+    top:110px;
+    width:148px;
+    height:367px;
+}
+
+#sudoku-table{
+    left:165px;
+    width:400px;
+}
+#new_game{
+    visibility: visible;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30em;
+    height: 18em;
+    margin-top: -9em;
+    margin-left: -15em;
+    border: 1px solid black;
+    background-color: #f3f3f3;
+    z-index: 1;
+}
+#div_title {
+    text-align: center;
+}
+#game_level {
+    position: absolute;
+    top: 100px;
+}
+#btn_start {
+    position: absolute;
+    top: 220px;
+    left: 70%;
 }
