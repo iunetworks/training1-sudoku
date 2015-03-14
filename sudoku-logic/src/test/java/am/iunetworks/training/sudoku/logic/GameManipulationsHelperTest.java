@@ -1,122 +1,99 @@
-package am.iunetworks.training.sudoku.logic;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+ 
+
+public class ManipulationsHelperTest {
+
+  char[] board= new char[81];
+  
+  
+  
+  
+  
+
+  private String getEmptyBoard() {
+      char[] board = new char[81];
+      Arrays.fill(board,'0');
+      return new String(board);
+  }
 
 
-public class GameManipulationsHelperTest {
-
-    @Test
-    public void testHelperBasicValidations() {
-        try {
-            new GameBoardManipulationsHelper(null);
-            fail("Helper should throw NPE if initialized with null");
-        }
-        catch (NullPointerException e) {
-            // this is OK
-        }
-
-
-        String[] allTheseValuesShouldThrowIAE = new String[]{
-          "", // empty ,
-          getEmptyBoard() + "0001", // longer,
-          getEmptyBoard().replace('0',' '), // all wrong characters,
-          getEmptyBoard().replaceFirst("\\d$", "x"), // one wrong character,
-          "12312313" // short,
-        };
-        for (String board : allTheseValuesShouldThrowIAE) {
-            try {
-                new GameBoardManipulationsHelper(board);
-                fail("Helper should throw NPE if initialized with null");
-            } catch (IllegalArgumentException e) {
-                // this is OK
-            }
-        }
-
-        // and simple normal case
-        new GameBoardManipulationsHelper(getEmptyBoard());
-    }
-
-    private String getEmptyBoard() {
-        char[] board = new char[81];
-        Arrays.fill(board,'0');
-        return new String(board);
-    }
-
-
-    @Test
-    public void testRotate () {
-
-
-          char [] board = new char[81];
-          Arrays.fill(board,'*');
-
-
-          String art = new String(board);
-
-          String temp = art.replaceFirst(".{9}", "123456789");
-          GameBoardManipulationsHelper  rot = new GameBoardManipulationsHelper(temp);
-//rotate1
-          assertEquals("after rotafter ", rot.board ,rot.RotateRight());
-          //assertEquals("after rotatet 9-index=1"rot.board[9],1); harca?
-//rotate2         
-          assertEquals("after rotafter ", rot.board ,rot.RotateRight());
-          //assertEquals("after rotatet 9-index=1"rot.board[81],1);
-//rotate3        
-          assertEquals("after rotafter ", rot.board ,rot.RotateRight());
-          //assertEquals("after rotatet 9-index=1"rot.board[1],9);
-//rotate4        
-          assertEquals("after rotafter ", temp ,rot.RotateRight());
-
-
-      }
-
-
-
-
-
-    }
 
 @Test
-public void TestReplaceRow () {
-	char [] board = new char[81];
-	Arrays.fill(board,'*');
-	
-	
-	String art = new String(board);
-	
-	String temp = art.replaceFirst(".{81}", "123456789123456789123456789123456789123456789123456789123456789123456789123456789");
-	Rotate  rot = new Rotate(temp);
-int index2=0;
+public    void rotate( ) {
+
+	  	 
+			Arrays.fill(board,'*');
+			String art = new String(board);
+			
+			String temp = art.replaceFirst(".{9}", "123456789");
+			
+			GameBoardManipulationsHelper  rot = new  GameBoardManipulationsHelper(temp);
+			 
+			board = temp.toCharArray();
+			 
+			 
+	          //rotateTest
+			  
+			   assertArrayEquals("after rotafter ", rot.rotateRight() ,rotTest (board));
+			   assertEquals("after rotafter ","1" ,String.valueOf((rot.getBoard()[8])));
+ 	 	       System.out.println( rot.getBoard()[8]);
+ 	 	       	 	      
+			 
+			   assertArrayEquals("after rotafter ", rot.rotateRight() ,rotTest (board));
+			   assertEquals("after rotafter ","1" ,String.valueOf((rot.getBoard()[80])));
+			   System.out.println( board);  
+			  
+			   assertArrayEquals("after rotafter ", rot.rotateRight() ,rotTest (board));
+			   assertEquals("after rotafter ","1" ,String.valueOf((rot.getBoard()[72])));
+			   System.out.println( board); 
+			  
+			   assertArrayEquals("after rotafter ", rot.rotateRight() ,rotTest (board));
+			   assertEquals("after rotafter ","1" ,String.valueOf((rot.getBoard()[0])));
+			   System.out.println( board); 
+			  
+			   assertArrayEquals("after rotafter ", rot.rotateRight() ,rotTest (board));
+			   System.out.println( board);
+			   
+ 		      
+	          
+	        
+	      }
+
+protected char[] rotTest (char[] board) {
 	 
-int length=9;
+	 
 	
-char [][] matrix =new char[length][length];
-char [][] tem =new char[length][length];
+	 
+	int length=9;
+		
 	
+	char [][] temp =new char[length][length];
+	int index= 0;
+
     for (int i = 0; i < length;i++ ){
         for(int j = 0; j < length; j++) {
-        
-        	if (j == rot.r ||  j==rot.r2){
-        		 matrix [i][rot.range]=tem[i][rot.range2]; 
-        		 matrix [i][rot.range2]=tem[i][rot.range];
-        	
-        	 }
-        	else    matrix [i][j]=tem[i][j]; 
-        	 
-         board[index2] = matrix[i][j];
-         index2++;
-        }}
-    assertEquals("after rotafter " board ,rot.Row());
-         
-//test1
-   assertNotEquals("after rotafter "rot.board ,rot.Row());
-   
+            temp[i][j] = board[index];
+            index++;
 
-}
+        }
+    }
+    
+    int index2=0;
+    for (int i = 0; i < length;i++ ){
+        for(int j = 0; j < length; j++) {
+            board[index2] = temp[length-j-1][i];
+           index2++;
+       
+    }
 
+	}
+    
+return board;}	
+ 
 
 }

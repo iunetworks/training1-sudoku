@@ -42,7 +42,26 @@
        </nav>
          
     </div>
-
+    <div id="new_game">
+ <div id="div_title">
+  <h3>Start new game</h3>
+ </div>
+   <div id="game_level">
+    Game level <select name="games">
+    <option value="easy">easy</option>
+    <option value="medium">medium</option>
+    <option value="hard">hard</option>
+    <option value="genius">genius</option>
+    </select>
+   </div>
+ <div id="btn_start">
+  <button id="hide" >Start</button>
+ </div>
+</div>
+    <div id="left_panel">
+     <br><br>
+     <button>HINT</button>
+    </div>
     <div class="row">
         <div id="sudoku-table" class="sudoku-table col-lg-10 span8">        </div>
         <div  class="btn-group span4 ">   <button  class="btn btn-success" value="" onclick="start_game()">HINT</button></div>
@@ -86,6 +105,14 @@
             -->
             
         </div>
+    </div>
+    <div class="row game-status">
+     <div class="col-md-4">
+      <p>Moves 0</p>
+     </div>
+    <div class="col-md-4">
+     <p id="timer">Time 00:00:00</p>
+    </div>
     </div>
 
     <div class="row">
