@@ -29,5 +29,24 @@ public class GameBoardManipulationsHelper {
             throw new IllegalArgumentException("Game board can only have 0-9 chars");
         }
     }
+    public static void rotate(int[][] board, int length) {
+        int temp[][] = new int[9][9];
+        int rowLength = board.length;
+        int columnLength = board[0].length;
+        int i;
+        int j;
+        for ( i = 0; i < rowLength; i++) {
+            for (j = 0; j < columnLength; j++) {
+                temp[i][j]= board[columnLength-j-1][i];
+            }
+        }
+
+        for ( i = 0; i < rowLength; i++){
+            for ( j=0; j<columnLength;j++){
+                board[i][j]=temp[i][j];
+
+            }
+        }
+    }
 
 }
