@@ -1,0 +1,34 @@
+.block{
+	display:inline-block;
+	width: 100px;
+	height: 25px;
+	font-size:20px;
+     
+ 
+   
+    font-size:24px;
+}
+
+.block1{
+border:1px solid #ccc;
+	font-size:16px;
+	display: inline;
+    
+	line-height:20px; 
+}
+.block1 ul li{}
+ .activ>li >a{
+position: relative;
+display: block;
+
+padding:7px  5px;
+}
+.activ>li>a:visited{
+ background-color:Green;
+ color: #000;
+.block3{ 
+	font-size:16px;
+	display: inline;
+    
+	line-height:40px; 
+}
