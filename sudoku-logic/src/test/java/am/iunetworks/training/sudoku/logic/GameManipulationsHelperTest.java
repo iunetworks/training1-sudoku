@@ -8,6 +8,11 @@ import static org.junit.Assert.*;
 
 
 public class GameManipulationsHelperTest {
+    private char[] board= new char[81];
+
+    private int row;
+    private int row2;
+
 
     @Test
     public void testHelperBasicValidations() {
@@ -45,4 +50,68 @@ public class GameManipulationsHelperTest {
         Arrays.fill(board,'0');
         return new String(board);
     }
-}
+
+
+
+
+    @Test
+    public  void rotate( ) {
+
+
+        Arrays.fill(board,'0');
+        String art = new String(board);
+
+        String temp = art.replaceFirst(".{9}", "123456789");
+
+        GameBoardManipulationsHelper  rot = new  GameBoardManipulationsHelper(temp);
+
+        board = temp.toCharArray();
+        char[]  boardOriginal = temp.toCharArray();
+        //rotateTest
+
+        assertArrayEquals("after rotafter ", rot.rotateRight() ,rotTest1(board));
+        assertEquals("after rotafter ","1" ,String.valueOf((rot.getBoard()[8])));
+        System.out.println(rot.getBoard() );
+
+
+        assertArrayEquals("after rotafter ", rot.rotateRight() ,rotTest2(board));
+        assertEquals("after rotafter ","1" ,String.valueOf((rot.getBoard()[80])));
+        System.out.println( rotTest1(board)  );
+
+
+        assertArrayEquals("after rotafter ", rot.rotateRight() ,rotTest3(board));
+        assertEquals("after rotafter ","1" ,String.valueOf((rot.getBoard()[72])));
+        System.out.println(rot.getBoard()  );
+
+        assertArrayEquals("after rotafter ", rot.rotateRight() ,boardOriginal);
+        assertEquals("after rotafter ","1" ,String.valueOf((rot.getBoard()[0])));
+        System.out.println( rot.getBoard()  );
+        System.out.println( boardOriginal );
+
+
+
+    }
+
+    private char[] rotTest3 (char[] board ) {
+        String art = new String(board);
+        String rotTest3 = art.replaceFirst(".{81}", "900000000800000000700000000600000000500000000400000000300000000200000000100000000");
+        board = rotTest3.toCharArray();
+
+        return board;}
+
+    private char[] rotTest2 (char[] board ) {
+        String art = new String(board);
+        String rotTest2 = art.replaceFirst(".{81}", "000000000000000000000000000000000000000000000000000000000000000000000000987654321");
+        board = rotTest2.toCharArray();
+
+        return board;}
+    private char[] rotTest1 (char[] board ) {
+        String art = new String(board);
+        String rotTest1 = art.replaceFirst(".{81}", "000000001000000002000000003000000004000000005000000006000000007000000008000000009");
+        board = rotTest1.toCharArray();
+
+        return board;}
+
+
+
+  }
