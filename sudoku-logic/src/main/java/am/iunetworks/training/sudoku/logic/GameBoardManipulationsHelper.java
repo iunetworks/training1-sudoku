@@ -10,24 +10,50 @@ package am.iunetworks.training.sudoku.logic;
  */
 public class GameBoardManipulationsHelper {
 
-    private char[] board;
+	private char[] board;
 
-    public GameBoardManipulationsHelper(String board) {
-        checkIsBoardValid(board);
-        this.board = board.toCharArray();
-    }
+	public GameBoardManipulationsHelper(String board) {
+		this.board = board.toCharArray();
+		checkIsBoardValid(board);
+		rotateBoardOn90Angle();
+	}
 
-    private void checkIsBoardValid(String board) {
-        if (board == null) {
-            throw new NullPointerException("Game board can't be null");
-        }
-        if (board.length() != 81) {
-            throw new IllegalArgumentException("Game board must be 81 chars long");
-        }
+	private void checkIsBoardValid(String board) {
+		if (board == null) {
+			throw new NullPointerException("Game board can't be null");
+		}
+		if (board.length() != 81) {
+			throw new IllegalArgumentException("Game board must be 81 chars long");
+		}
 
-        if (!board.matches("^\\d{81}$")) {
-            throw new IllegalArgumentException("Game board can only have 0-9 chars");
-        }
-    }
+		if (!board.matches("^\\d{81}$")) {
+			throw new IllegalArgumentException("Game board can only have 0-9 chars");
+		}
+	}
 
+	private GameBoardManipulationsHelper rotateBoardOn90Angle() {
+		char[] boardRotate = new char[board.length];
+		int digitPosition = board.length - 1;
+		for (int i = 1; i < 10; i++) {
+			for (int j = board.length - (10 - i); j >= 0; j -= 9) {
+				boardRotate[j] = board[digitPosition];
+				digitPosition--;
+			}
+		}
+		board = Arrays.copyOf(boardRotate, 81);
+		return this;
+	}
+    //ete petq lini 180 astijan ptuit
+/*	public GameBoardManipulationsHelper rotateBoardOn180Angle() {
+		String rotateBoard = new String(board);
+		StringBuilder helpRotate = new StringBuilder(rotateBoard);
+		helpRotate.reverse();
+		rotateBoard = new String(helpRotate);
+		board = rotateBoard.toCharArray();
+		return this;
+	}*/
+
+	public String getBoard() {
+		return new String(board);
+	}
 }
