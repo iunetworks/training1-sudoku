@@ -39,6 +39,20 @@ public class GameManipulationsHelperTest {
         // and simple normal case
         new GameBoardManipulationsHelper(getEmptyBoard());
     }
+    
+	@Test
+	public void testBoardRotate () {
+		//valid Board
+		String testBoard = "375964182964182375182375964759641823641823759823759641596418237418237596237596418";
+		GameBoardManipulationsHelper helper = new GameBoardManipulationsHelper(testBoard);
+		//rotate 90+90+90+90
+		helper.rotateBoardOn90Angle();
+		helper.rotateBoardOn90Angle();
+		helper.rotateBoardOn90Angle();
+		helper.rotateBoardOn90Angle();
+		
+		assertEquals(testBoard, helper.getBoard());
+	}
 
     private String getEmptyBoard() {
         char[] board = new char[81];
