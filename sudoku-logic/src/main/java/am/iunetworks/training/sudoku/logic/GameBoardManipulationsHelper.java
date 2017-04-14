@@ -41,7 +41,7 @@ public class GameBoardManipulationsHelper {
 				digitPosition--;
 			}
 		}
-		board = Arrays.copyOf(boardRotate, 81);
+		board = boardRotate;
 		return this;
 	}
     
