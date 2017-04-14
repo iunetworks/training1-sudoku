@@ -1,5 +1,7 @@
 package am.iunetworks.training.sudoku.logic;
 
+import java.util.Arrays;
+
 /**
  * This class contains all board manipulations.
  *  - Rotate
@@ -29,5 +31,22 @@ public class GameBoardManipulationsHelper {
             throw new IllegalArgumentException("Game board can only have 0-9 chars");
         }
     }
+    
+    public GameBoardManipulationsHelper rotateBoardOn90Angle() {
+		char[] boardRotate = new char[board.length];
+		int digitPosition = board.length - 1;
+		for (int i = 1; i < 10; i++) {
+			for (int j = board.length - (10 - i); j >= 0; j -= 9) {
+				boardRotate[j] = board[digitPosition];
+				digitPosition--;
+			}
+		}
+		board = Arrays.copyOf(boardRotate, 81);
+		return this;
+	}
+    
+    public String getBoard() {
+		return new String(board);
+	}
 
 }
