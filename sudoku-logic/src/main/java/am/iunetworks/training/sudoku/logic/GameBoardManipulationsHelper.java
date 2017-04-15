@@ -1,7 +1,5 @@
 package am.iunetworks.training.sudoku.logic;
 
-import java.util.Arrays;
-
 /**
  * This class contains all board manipulations.
  *  - Rotate
@@ -42,6 +40,32 @@ public class GameBoardManipulationsHelper {
 			}
 		}
 		board = boardRotate;
+		return this;
+	}
+    
+    public GameBoardManipulationsHelper switchRow(int selectRow, int changeRow) {
+		if (selectRow < 0 || selectRow > 8 || changeRow < 0 || changeRow > 8 || selectRow == changeRow) {
+			return this;
+		}
+		char tmp;
+		for (int i = 0; i < 9; i++) {
+			tmp = board[i + (changeRow * 9)];
+			board[i + (changeRow * 9)] = board[i+(selectRow*9)];
+			board[i+(selectRow*9)] = tmp;
+		}
+		return this;
+	}
+    
+    public GameBoardManipulationsHelper switchColumn(int selectColumn, int changeColumn) {
+		if (selectColumn < 0 || selectColumn > 8 || changeColumn < 0 || changeColumn > 8 || selectColumn == changeColumn) {
+			return this;
+		}
+		char tmp;
+		for(int i = 0; i < 9; i++) {
+			tmp = board[selectColumn + (9 * i)];
+			board[selectColumn + (9 * i)] = board[changeColumn + (9 * i)];
+			board[changeColumn + (9 * i)] = tmp;
+		}
 		return this;
 	}
     
