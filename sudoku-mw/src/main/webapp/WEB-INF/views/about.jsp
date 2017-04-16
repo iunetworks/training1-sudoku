@@ -17,6 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="${requestScope.pageContext}/static/css/jumbotron-narrow.css" rel="stylesheet">
     <link href="${requestScope.pageContext}/static/css/sudoku.css" rel="stylesheet">
+	  <link href="${requestScope.pageContext}/static/css/sudoku2.css" rel="stylesheet"> 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -29,95 +30,76 @@
 
 <div class="container">
     <div class="header">
-         <div  class="btn-group  span8"  > <h3 class="text-muted">Open Sudoku</h3> </div>
+	
         <nav>
-             
-        <div  class="btn-group  span8" >    <ul class="nav nav-pills pull-right">
-             <li role="presentation" class="active"><a href="#" type="button" value="play" onclick="start_timer()">Play</a></li>
+            <ul class="nav nav-pills pull-right"> 
+                <li role="presentation" class="active"><a href="#" type="button" value="play" onclick="start_timer()">Play</a></li>
                 <li role="presentation"><a href="/submit.html">Submit a Game</a></li>
-                <li role="presentation"><a href=" arthap-training1-sudoku\sudoku-mw\src\main\webapp\WEB-INF\views\about.jsp">About project</a></li>
+                <li role="presentation"><a href="/about.html">About project</a></li>
+				
             </ul>
-        </div>
- <div  class="btn-group ">   <button  class="btn btn-primary " value="" onclick="start_game()">NEW GAME</button></div>
-       </nav>
-         
-    </div>
-    <div id="new_game">
- <div id="div_title">
-  <h3>Start new game</h3>
- </div>
-   <div id="game_level">
-    Game level <select name="games">
-    <option value="easy">easy</option>
-    <option value="medium">medium</option>
-    <option value="hard">hard</option>
-    <option value="genius">genius</option>
-    </select>
-   </div>
- <div id="btn_start">
-  <button id="hide" >Start</button>
- </div>
-</div>
-    <div id="left_panel">
-     <br><br>
-     <button>HINT</button>
-    </div>
-    <div class="row">
-        <div id="sudoku-table" class="sudoku-table col-lg-10 span8">        </div>
-        <div  class="btn-group span4 ">   <button  class="btn btn-success" value="" onclick="start_game()">HINT</button></div>
+        </nav>
+        <div class ="block"><h3 class="text-muted">Open Sudoku  </h3></div>
+		
+	
     </div>
 
+     
 
+       
+
+<div class="content">
 
 <div class="row">
-        <div class="col-lg-12">
-        
-        
 
-       <div class ="span4" id="sample_timer">00:00:00</div>
+<div class="span6">.<h1>Play Free Sudoku Now!</h1>..</div>
+  <div class="span6"><p>Sudoku is one of the most popular puzzle games of all time. The goal of Sudoku is to fill a 9×9 grid with numbers so that each row, column and 3×3 section contain all of the digits between 1 and 9. As a logic puzzle, Sudoku is also an excellent brain game. If you play Sudoku daily, you will soon start to see improvements in your concentration and overall brain power. Start a game now. Within no time Sudoku will be your favorite free online game.
 
-        <div class ="span4">
-             <div class ="span8"> <a href="#">   Moves: 1 </a> </div>  
+  </p>..</div>
+
+<div class="span6">.<h1>About Sudoku</h1>..</div>
+  <div class="span6"><p>The popular Japanese puzzle game Sudoku is based on the logical placement of numbers. An online game of logic, Sudoku doesn’t require any calculation nor special math skills; all that is needed are brains and concentration.
+
+  </p>..</div>
 
 
-         
-               <div class ="span8"> <ul  class="nav nav-pills pull-right activ">
-                   
-                    <li role="presentation"><a href="#">easy </a></li> 
-                    <li role="presentation"><a href="#">medium</a></li> 
-                    <li role="presentation"><a href="#">hard </a></li>
-                    <li role="presentation"><a href="#">genius</a></li>    
-                </ul>
-               </div>
-        </div>
+  <div class="content">
+
+<div class="row">
+<div class="span6">
+<h1>Registration</h1>
+<form action="/echo" method="post">
+<label for="login-field">Login (email):</label>
+<input type="text" name="login" id="login-field"><br>
+
+<label for="password-field">Password:</label><br>
+<input type="password" name="password" id="password-field">
+Information about yourself:
+<textarea name="comment" id="comment-field" rows=3>
+</textarea><br>
+<input type="checkbox" name="subcribe" id="subscribe-field" checked>
+<label for="checkbox"> Subscribe to newsletter</label>
+<input type="submit" value="Sign Up">
+
+</form></div>
+</div>
+
+</div>
+ 
 
 
 
 <!--
-        <nav>
+		<nav>
             <ul class="nav nav-pills pull-right"> 
                 <li role="presentation" class="active"><a href="#" ><div class ="block" id="sample_timer">00:00:00</div> </a></li>
                 
                 <li role="presentation"><a href="/about.html"><div>  Moves: 1</div></a></li>
-                
+				
             </ul>
         </nav>
             -->
-            
-        </div>
-    </div>
-    <div class="row game-status">
-     <div class="col-md-4">
-      <p>Moves 0</p>
-     </div>
-    <div class="col-md-4">
-     <p id="timer">Time 00:00:00</p>
-    </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12">
-            &nbsp;
+			
         </div>
     </div>
 
@@ -135,6 +117,10 @@
     </footer>
 
 </div>
+
+<div>  <a href="#" type="button" value="play" onclick="start_game()">NEW GAME</a></li>
+</div>
+
 <!-- /container -->
 
 
@@ -143,14 +129,14 @@
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="${requestScope.pageContext}/static/js/sudoku-game.js"></script>
-<script src="${requestScope.pageContext}/static/js/bord.js"></script> 
 
-<form>
+	
 
-<script src="${requestScope.pageContext}/static/js/timer.js"></script>
 
-</form>
- 
+
+
+
+<!-- / <input type="button" value="play" onclick="start_timer()">*/ -->
 
 </body>
 </html>
