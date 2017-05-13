@@ -43,10 +43,14 @@ public class GameBoardManipulationsHelper {
 		return this;
 	}
     
-    public GameBoardManipulationsHelper switchRow(int selectRow, int changeRow) {
-		if (selectRow < 0 || selectRow > 8 || changeRow < 0 || changeRow > 8 || selectRow == changeRow) {
+    public GameBoardManipulationsHelper switchRows(int selectRow, int changeRow) {
+    	
+    	switchExeption(selectRow, changeRow);
+    	
+    	if (selectRow == changeRow) {
 			return this;
 		}
+		
 		char tmp;
 		for (int i = 0; i < 9; i++) {
 			tmp = board[i + (changeRow * 9)];
@@ -56,10 +60,14 @@ public class GameBoardManipulationsHelper {
 		return this;
 	}
     
-    public GameBoardManipulationsHelper switchColumn(int selectColumn, int changeColumn) {
-		if (selectColumn < 0 || selectColumn > 8 || changeColumn < 0 || changeColumn > 8 || selectColumn == changeColumn) {
+    public GameBoardManipulationsHelper switchColumns(int selectColumn, int changeColumn) {
+    	
+    	switchExeption(selectColumn, changeColumn);
+    	
+    	if (selectColumn == changeColumn) {
 			return this;
 		}
+    	
 		char tmp;
 		for(int i = 0; i < 9; i++) {
 			tmp = board[selectColumn + (9 * i)];
@@ -68,6 +76,12 @@ public class GameBoardManipulationsHelper {
 		}
 		return this;
 	}
+    
+    private void switchExeption (int a, int b) {
+    	if(a < 0 || a > 8 || b < 0 || b > 8 || a/3 != b/3) {
+			throw new IllegalArgumentException("NO");
+		}
+    }
     
     public String getBoard() {
 		return new String(board);
